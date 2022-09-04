@@ -1,0 +1,341 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --main-color: #19283f;
+  --desgin-color: #33d1cc;
+  --text-color: #ffc400;
+  --red: #ff3150;
+  --section-color: #eff7fa;
+}
+
+.head {
+  position: relative;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Components */
+
+.head::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 2px;
+  background-color: var(--desgin-color);
+}
+/* >>>>>>>>>>>>>>>>> */
+.navbar {
+  background-color: var(--main-color);
+}
+
+.navbar .bar-icon {
+  color: white;
+  background-color: var(--main-color);
+  font-size: 25px;
+  border: 1px solid var(--desgin-color);
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+.navbar ul li:last-of-type {
+  position: relative;
+}
+
+.navbar ul li:last-of-type::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 25px;
+  background-color: var(--desgin-color);
+  top: 50%;
+  right: -8px;
+  transform: translateY(-50%);
+}
+.navbar li a {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+.navbar .container li a.active {
+  color: var(--desgin-color);
+}
+.navbar ul li:hover a {
+  color: var(--desgin-color);
+}
+
+.navbar ul svg {
+  color: white;
+  display: inline-block;
+  padding: 20px;
+  color: var(--desgin-color);
+}
+
+@media (max-width: 991px) {
+  .navbar ul li:last-of-type::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 0;
+    background-color: var(--desgin-color);
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+}
+
+.navbar ul button {
+  color: var(--text-color);
+  background-color: var(--red);
+}
+/* end navbar */
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* start landing */
+.header {
+  background-color: var(--main-color);
+}
+.header .text button {
+  color: var(--text-color);
+  background-color: var(--red);
+  border: none;
+}
+
+/* end landing */
+/* start features */
+
+.features svg {
+  color: var(--desgin-color);
+}
+.features .icon-holder {
+  height: 200px;
+}
+.features .icon-holder svg {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.features .icon-holder svg:first-child {
+  color: var(--section-color);
+  font-size: 12rem;
+}
+
+.features h3 {
+  color: var(--text-color);
+}
+
+/* end features */
+/* <!-- start shuffle --> */
+.shuffle {
+  background-color: var(--section-color);
+}
+.shuffle .buttons li {
+  cursor: pointer;
+}
+
+.shuffle .buttons .active {
+  color: var(--text-color) !important;
+  background-color: var(--red);
+}
+.shuffle .buttons li:hover:not(.active) {
+  color: var(--red) !important;
+}
+.shuffle .row.hidden-photos {
+  transition: opacity 0.5s;
+}
+.shuffle .row.opacity {
+  opacity: 0;
+}
+.shuffle .row .box {
+  position: relative;
+  padding: 5px;
+  overflow: hidden;
+}
+.shuffle .row img {
+  position: relative;
+  border: 5px solid white;
+}
+.shuffle .row .box::before {
+  content: attr(data-work);
+  position: absolute;
+  background-color: rgb(51 209 204 / 76%);
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  transition: 0.3s;
+  font-size: 1.5rem;
+  z-index: 1;
+  transform: translateX(calc(-100% - 10px));
+}
+.shuffle .row .box:hover:before {
+  transform: translateX(0);
+  z-index: 1;
+}
+.shuffle .button button {
+  color: var(--text-color);
+  background-color: var(--red);
+  border: none;
+}
+/* <!-- end shuffle --> */
+/* <!-- start about-us --> */
+
+.about-us .text {
+  max-width: 500px;
+  margin: auto;
+}
+
+.about-us .info button {
+  color: var(--text-color);
+  background-color: var(--red);
+  border: none;
+}
+
+.about-us img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* <!-- end about-us --> */
+/* <!-- start team members --> */
+.team-members {
+  background-color: var(--section-color);
+}
+
+.team-members h2 {
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+.team-members h4 {
+  background-color: var(--desgin-color);
+  color: white;
+  font-weight: bold;
+  padding: 16px 0;
+  font-size: 25px;
+}
+.team-members .card {
+  border: none;
+}
+/* <!-- end team members --> */
+
+/* tech have no style here !! */
+
+/* start project */
+.project {
+  background-color: var(--main-color);
+}
+
+.project button {
+  color: var(--text-color);
+  background-color: var(--red);
+  border: none;
+}
+/* end project */
+/* start blog */
+.blog small {
+  display: inline-block;
+  padding-left: 1rem;
+  font-size: 16px;
+}
+
+.blog button {
+  color: var(--text-color);
+  background-color: var(--red);
+  border: none;
+}
+/* end blog */
+/* start contact */
+.contact-us {
+  background-color: var(--text-color);
+}
+
+.contact-us input[type="email"] {
+  box-sizing: 1px;
+  border-color: transparent transparent white transparent;
+}
+.contact-us input::placeholder {
+  color: white;
+  font-weight: 400;
+}
+
+.contact-us input[type="email"]:focus {
+  outline: none;
+}
+
+.contact-us input[type="submit"] {
+  color: var(--text-color);
+}
+/* end contact */
+/* start footer */
+.footer {
+  background-color: var(--main-color);
+}
+
+.footer .first {
+  color: var(--text-color);
+}
+
+.footer .socend {
+  color: var(--desgin-color);
+}
+
+.footer li {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer li:hover {
+  padding-left: 10px;
+  color: var(--desgin-color);
+}
+
+.footer button {
+  color: var(--text-color);
+  background-color: var(--red);
+  border: none;
+}
+
+.footer svg {
+  width: 20px;
+  height: 20px;
+}
+
+.footer svg:nth-child(1) {
+  color: white;
+  background-color: #1877f2;
+}
+
+.footer svg:nth-child(2) {
+  color: white;
+  background-color: #1da1f2;
+}
+
+.footer svg:nth-child(3) {
+  color: white;
+  background-color: #0077b5;
+}
+
+.footer svg:nth-child(4) {
+  color: white;
+  background-color: #405de6;
+}
+.footer svg:nth-child(5) {
+  color: white;
+  background-color: #34a853;
+}
+/* end footer */
